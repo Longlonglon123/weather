@@ -7,7 +7,7 @@ with speech_recognition.Microphone() as mic:
 
 try:
 	you = robot_ear.recognize_google(audio)
-except:
+except TypeError as e:
 	you = ""
 
-print ("you: " + you)
+print("you: " + you)
