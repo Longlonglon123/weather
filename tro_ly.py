@@ -9,12 +9,11 @@ while True:
 
 	try:
 		you = robot_ear.recognize_google(audio)
-	except:
+	except TypeError as e:
+		print(e)
 		you = ""
 
-	print ("you: " + you)
-
-
+	print("you: " + you)
 
 	if you == " ":
 		robot_brain = "I can't here you"
@@ -32,7 +31,7 @@ while True:
 		robot_brain = now.strftime("%H:%M:%S")
 	elif "president" in you:
 		robot_brain = "Donald Trump"
-	elif  "thank you" in you:
+	elif "thank you" in you:
 		robot_brain = "ohh nothing"
 	elif "bye" in you:
 		robot_brain = "goodbye"
@@ -42,7 +41,7 @@ while True:
 		break
 	else: 
 		robot_brain = "sorry I can't help you"
-	print (robot_brain)
+	print(robot_brain)
 
 	import pyttsx3
 
